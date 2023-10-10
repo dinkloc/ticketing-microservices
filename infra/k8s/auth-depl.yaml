@@ -7,14 +7,14 @@ spec:
   selector:
     matchLabels:
       app: auth
-    template:
-      metadata:
-        labels:
-          app: auth
-      spec:
-        containers:
-          - name: auth
-            image: dinhlocng/auth
+  template:
+    metadata:
+      labels:
+        app: auth
+    spec:
+      containers:
+        - name: auth
+          image: dinhlocng/auth
 ---
 apiVersion: v1
 kind: Service
@@ -27,4 +27,4 @@ spec:
     - name: auth
       protocol: TCP
       port: 3000
-      targetPort: 300
+      targetPort: 3000
