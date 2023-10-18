@@ -1,20 +1,21 @@
-import express, { Request, Response } from "express";
+import express from "express";
+import { signup } from "../controllers/signupController";
 import { body } from "express-validator";
-import { signin } from "../controllers/signinController";
 import { validateRequest } from "../middlewares/validate-request";
+
 const router = express.Router();
 
 router.post(
-  "/api/users/signin",
+  "/api/users/signup",
   [
     body("email").isEmail().withMessage("Email must be valid"),
     body("password")
       .trim()
-      .notEmpty()
-      .withMessage("You must supply a password"),
+      .isLength({ min: 4, max: 20 })
+      .withMessage("Password must be between 4 and 20 characters"),
   ],
   validateRequest,
-  signin
+  signup
 );
 
-export { router as signinRouter };
+export { router as signupRouter };
