@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import { body } from "express-validator";
 import { signin } from "../controllers/signinController";
-import { validateRequest } from "../middlewares/validate-request";
+import { validateRequest } from "@dlngtickets/common";
 const router = express.Router();
 
 router.post(
