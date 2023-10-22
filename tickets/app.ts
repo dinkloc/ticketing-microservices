@@ -13,7 +13,7 @@ app.use(
     secure: process.env.NODE_ENV !== "test",
   })
 );
-// authentication
+
 
 
 app.all("*", async (req, res) => {
