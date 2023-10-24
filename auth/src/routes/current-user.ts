@@ -1,6 +1,6 @@
 import express from "express";
 import { currentUser } from "../controllers/currentuserController";
-import { middlewareCurrentUser } from "../middlewares/current-user";
+import { middlewareCurrentUser } from "@dlngtickets/common/";
 
 const router = express.Router();
 

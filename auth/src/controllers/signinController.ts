@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import { Request, Response } from "express";
 import { User } from "../models/user";
-import { BadRequestError } from "../errors/bad-request-error";
+import { BadRequestError } from "@dlngtickets/common";
 import { Password } from "../services/password";
 const signin = async (req: Request, res: Response) => {
   const { email, password } = req.body;
