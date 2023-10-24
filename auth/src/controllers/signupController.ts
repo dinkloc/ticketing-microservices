@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import { User } from "../models/user";
-import { BadRequestError } from "../errors/bad-request-error";
+import { BadRequestError } from "@dlngtickets/common";
 const signup = async (req: Request, res: Response) => {
   const { email, password } = req.body;
 
