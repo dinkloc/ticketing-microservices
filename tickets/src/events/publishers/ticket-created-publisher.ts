@@ -1,5 +1,5 @@
-import { Publisher, Subject, TicketCreatedEvent } from "@dlngtickets/common";
+import { Publisher, Subjects, TicketCreatedEvent } from "@dlngtickets/common";
 
 export class TicketCreatedPublisher extends Publisher<TicketCreatedEvent> {
-  subject: Subject.TicketCreated = Subject.TicketCreated;
+  subject: Subjects.TicketCreated = Subjects.TicketCreated;
 }
