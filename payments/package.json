@@ -18,7 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@dlngtickets/common": "^1.0.12",
+    "@dlngtickets/common": "^1.0.14",
     "@types/cookie-session": "^2.0.45",
     "@types/express": "^4.17.18",
     "@types/jsonwebtoken": "^9.0.3",
@@ -32,6 +32,7 @@
     "mongoose-update-if-current": "^1.4.0",
     "node-nats-streaming": "^0.3.2",
     "node-streaming-server": "^1.0.0",
+    "stripe": "^14.3.0",
     "ts-node-dev": "^2.0.0",
     "typecript": "^0.0.1-security"
   },

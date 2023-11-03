@@ -7,6 +7,7 @@ import {
   NotFoundError,
   middlewareCurrentUser,
 } from "@dlngtickets/common";
+import { createChargeRouter } from "./routes/new";
 
 const app = express();
 app.set("trust proxy", true);
@@ -19,6 +20,7 @@ app.use(
 );
 app.use(middlewareCurrentUser);
 
+app.use(createChargeRouter);
 app.all("*", async (req: Request, res: Response) => {
   throw new NotFoundError();
 });
