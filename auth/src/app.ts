@@ -6,7 +6,7 @@ import { json } from "body-parser";
 import { currentUserRouter } from "./routes/current-user";
 import { signinRouter } from "./routes/signin";
 import { signoutRouter } from "./routes/signout";
-import { signupRouter } from "./routes/signupRoute";
+import { signupRouter } from "./routes/signup";
 import { errorHandler } from "@dlngtickets/common";
 import { NotFoundError } from "@dlngtickets/common";
 const app = express();
