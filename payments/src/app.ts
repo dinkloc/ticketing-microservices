@@ -1,13 +1,13 @@
-import express, { Request, Response } from "express";
-import cookieSession from "cookie-session";
+import express from "express";
 import "express-async-errors";
 import { json } from "body-parser";
+import cookieSession from "cookie-session";
 import {
   errorHandler,
   NotFoundError,
   middlewareCurrentUser,
 } from "@dlngtickets/common";
-import { createChargeRouter } from "./routes/new";
+import { createPayments } from "./routes/new";
 
 const app = express();
 app.set("trust proxy", true);
@@ -20,8 +20,9 @@ app.use(
 );
 app.use(middlewareCurrentUser);
 
-app.use(createChargeRouter);
-app.all("*", async (req: Request, res: Response) => {
+app.use(createPayments);
+
+app.all("*", async (req, res) => {
   throw new NotFoundError();
 });
 

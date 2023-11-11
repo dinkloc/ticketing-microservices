@@ -6,7 +6,6 @@ import {
   errorHandler,
   NotFoundError,
   middlewareCurrentUser,
-  OrderStatus,
 } from "@dlngtickets/common";
 import { deleteOrderRouter } from "./routes/delete";
 import { indexOrderRouter } from "./routes/index";

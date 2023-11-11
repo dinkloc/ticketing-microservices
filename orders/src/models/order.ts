@@ -1,5 +1,5 @@
-import { updateIfCurrentPlugin } from "mongoose-update-if-current";
 import mongoose from "mongoose";
+import { updateIfCurrentPlugin } from "mongoose-update-if-current";
 import { OrderStatus } from "@dlngtickets/common";
 import { TicketDoc } from "./ticket";
 export { OrderStatus };

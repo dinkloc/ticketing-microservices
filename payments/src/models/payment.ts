@@ -2,10 +2,12 @@ import mongoose from "mongoose";
 
 interface PaymentAttrs {
   orderId: string;
+  numberCard: string;
 }
 
 interface PaymentDoc extends mongoose.Document {
   orderId: string;
+  numberCard: string;
 }
 
 interface PaymentModel extends mongoose.Model<PaymentDoc> {
@@ -15,6 +17,10 @@ interface PaymentModel extends mongoose.Model<PaymentDoc> {
 const paymentSchema = new mongoose.Schema(
   {
     orderId: {
+      required: true,
+      type: String,
+    },
+    numberCard: {
       required: true,
       type: String,
     },

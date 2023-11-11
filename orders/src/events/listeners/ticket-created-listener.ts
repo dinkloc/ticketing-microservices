@@ -1,7 +1,7 @@
-import { Listener, Subjects, TicketCreatedEvent } from "@dlngtickets/common";
 import { Message } from "node-nats-streaming";
-import { queueGroupName } from "./queue-group-name";
+import { Subjects, Listener, TicketCreatedEvent } from "@dlngtickets/common";
 import { Ticket } from "../../models/ticket";
+import { queueGroupName } from "./queue-group-name";
 
 export class TicketCreatedListener extends Listener<TicketCreatedEvent> {
   subject: Subjects.TicketCreated = Subjects.TicketCreated;
@@ -9,6 +9,7 @@ export class TicketCreatedListener extends Listener<TicketCreatedEvent> {
 
   async onMessage(data: TicketCreatedEvent["data"], msg: Message) {
     const { id, title, price } = data;
+
     const ticket = Ticket.build({
       id,
       title,

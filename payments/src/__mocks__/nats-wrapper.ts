@@ -9,5 +9,3 @@ export const natsWrapper = {
       ),
   },
 };
-
-it("publishes an event", async () => {});

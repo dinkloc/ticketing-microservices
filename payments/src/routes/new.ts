@@ -1,27 +1,27 @@
+import express, { Request, Response } from "express";
+import { body } from "express-validator";
 import {
+  requireAuth,
+  validateRequest,
   BadRequestError,
   NotAuthorizedError,
   NotFoundError,
   OrderStatus,
-  requireAuth,
-  validateRequest,
 } from "@dlngtickets/common";
-import express, { Request, Response } from "express";
-import { body } from "express-validator";
 import { Order } from "../models/order";
-import { stripe } from "../stripe";
+import { Payment } from "../models/payment";
 import { PaymentCreatedPublisher } from "../events/publishers/payment-created-publisher";
 import { natsWrapper } from "../nats-wrapper";
-import { Payment } from "../models/payment";
+
 const router = express.Router();
 
 router.post(
   "/api/payments",
   requireAuth,
-  [body("token").not().isEmpty(), body("orderId").not().isEmpty()],
+  [body("numberCard").not().isEmpty(), body("orderId").not().isEmpty()],
   validateRequest,
   async (req: Request, res: Response) => {
-    const { token, orderId } = req.body;
+    const { numberCard, orderId } = req.body;
 
     const order = await Order.findById(orderId);
 
@@ -31,29 +31,25 @@ router.post(
     if (order.userId !== req.currentUser!.id) {
       throw new NotAuthorizedError();
     }
-
     if (order.status === OrderStatus.Cancelled) {
       throw new BadRequestError("Cannot pay for an cancelled order");
     }
-
-    const chagers = await stripe.charges.create({
-      currency: "usd",
-      amount: order.price,
-      source: token,
-    });
-
     const payment = Payment.build({
       orderId,
+      numberCard: numberCard,
+    });
+    await payment.save();
+    new PaymentCreatedPublisher(natsWrapper.client).publish({
+      id: payment.id,
+      orderId: payment.orderId,
+      numberCard: payment.numberCard,
     });
 
-    await payment.save();
-    await new PaymentCreatedPublisher(natsWrapper.client).publish({
+    res.status(201).send({
+      status: "ordered successfully",
       id: payment.id,
-      orderId: payment.id,
-      stripeId: "123",
     });
-    res.send({ id: payment.id });
   }
 );
 
-export { router as createChargeRouter };
+export { router as createPayments };
