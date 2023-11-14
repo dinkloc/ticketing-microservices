@@ -1,4 +1,22 @@
 import Link from "next/link";
+import styled from "styled-components";
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  fontsize: 10px;
+`;
+
+const ImageIcon = styled.img`
+  width: 100px;
+`;
+
+const Li = styled.li``;
+
+const H5 = styled.h5`
+  display: inline;
+`;
 
 export default ({ currentUser }) => {
   const links = [
@@ -11,23 +29,26 @@ export default ({ currentUser }) => {
     .filter((linkConfig) => linkConfig)
     .map(({ label, href }) => {
       return (
-        <li key={href} className="nav-item">
-          <Link className="nav-link" href={href}>
+        <Li key={href} className="nav-item">
+          <StyledLink className="nav-link" href={href}>
             {label}
-          </Link>
-        </li>
+          </StyledLink>
+        </Li>
       );
     });
 
   return (
-    <nav className="navbar navbar-light bg-light">
-      <Link className="navbar-brand" href="/">
-        GitTix
-      </Link>
+    <div className="container">
+      <nav className="navbar navbar-white bg-white">
+        <Link className="navbar-brand" href="/">
+          <ImageIcon src="../static/bm-white-blue.png" href="" />
+          <H5> Ticket Swaps </H5>
+        </Link>
 
-      <div className="d-flex justify-content-end">
-        <ul className="nav d-flex align-items-center">{links}</ul>
-      </div>
-    </nav>
+        <div className="d-flex justify-content-end">
+          <ul className="nav d-flex align-items-center">{links}</ul>
+        </div>
+      </nav>
+    </div>
   );
 };

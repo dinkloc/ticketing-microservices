@@ -1,10 +1,16 @@
 import "bootstrap/dist/css/bootstrap.css";
 import buildClient from "../api/build-client";
 import Header from "../components/header";
+import Head from "next/head";
 
 const AppComponent = ({ Component, pageProps, currentUser }) => {
   return (
     <div>
+      <Head>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <title>Ticket Swap</title>
+        <link rel="shortcut icon" href="../static/ticket.ico" />
+      </Head>
       <Header currentUser={currentUser} />
       <div className="container">
         <Component currentUser={currentUser} {...pageProps} />
