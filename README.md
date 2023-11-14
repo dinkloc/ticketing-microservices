@@ -14,4 +14,10 @@ Deployments [![My Skills](https://skills.thijs.gg/icons?i=docker)](https://skill
 
 Architecture
 
-![image](https://github.com/dinkloc/ticketing-microservices/assets/124766126/015471cc-fe7b-413a-a786-8c2e5c974168)
+![image](https://github.com/dinkloc/ticketing-microservices/assets/124766126/acedbf7f-9eef-41d8-958c-3d96b6a156da)
+
+
+
+1 Service Client
+5 Service Backend 
+1 Service Event NATS Streaming
