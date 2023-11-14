@@ -48,8 +48,11 @@ const OrderShow = ({ order }) => {
             onChange={(event) => {
               setNumberCard(event.target.value);
             }}
+            style={{ margin: "3px 0 0 0", width: "300px" }}
           />
-          <button className="btn btn-primary">Confirm</button>
+          <button style={{ margin: "10px 0 0 0" }} className="btn btn-primary">
+            Confirm
+          </button>
         </div>
       </form>
     </div>

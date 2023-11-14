@@ -37,6 +37,10 @@ router.post(
       throw new NotFoundError();
     }
 
+    // You cannot buy a ticket if you already own it
+    if (req.currentUser!.id === ticket.userId) {
+      throw new BadRequestError("You already own this ticket");
+    }
     // Make sure that this ticket is not already reserved
     const isReserved = await ticket.isReserved();
     if (isReserved) {
