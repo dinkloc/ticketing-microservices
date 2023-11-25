@@ -4,9 +4,6 @@ import { app } from "./app";
 const start = async () => {
   console.log("stating up..... ");
   console.log("stating up..... ");
-  console.log("stating up..... ");
-  console.log("stating up..... ");
-  console.log("stating up..... ");
 
   console.log("testing..... ");
 
