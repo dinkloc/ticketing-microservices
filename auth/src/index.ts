@@ -2,13 +2,7 @@ import mongoose from "mongoose";
 import { app } from "./app";
 
 const start = async () => {
-  console.log("stating up..... ");
-  console.log("stating up..... ");
-  console.log("stating up..... ");
-  console.log("stating up..... ");
-  console.log("stating up..... ");
-  console.log("stating up..... ");
-  console.log("stating up..... ");
+  console.log("Check Deploy ");
   if (!process.env.JWT_KEY) {
     throw new Error("JWT_KEY must be defined");
   }
