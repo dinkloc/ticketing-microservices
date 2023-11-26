@@ -28,12 +28,12 @@ All services include a shared library as a dependency, called @tick-it/common, w
 
 List of microservices:
 
-client - Service responsible for the front-end.
-auth - Service responsible for authentication.
-tickets - Service responsible tickets.
-orders - Service responsible for orders.
-payments - Service managing payments.
-expiration - Service handling an order expiration time.
-nats streaming - Service events. Communicate between services
+  - client - Service responsible for the front-end.
+  - auth - Service responsible for authentication.
+  - tickets - Service responsible tickets.
+  - orders - Service responsible for orders.
+  - payments - Service managing payments.
+  - expiration - Service handling an order expiration time.
+  - nats streaming - Service events. Communicate between services
 
 Demo: http://www.ticketswap.one/
