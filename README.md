@@ -1,30 +1,47 @@
-# Overview
-
-Frontend [![My Skills](https://skills.thijs.gg/icons?i=nextjs)](https://skills.thijs.gg)
 
 
-Backend [![My Skills](https://skills.thijs.gg/icons?i=nodejs)](https://skills.thijs.gg)
+## Table of Contents
 
+- [Description](#description)
+- [Feature](#feature)
+- [Services](#Services)
+- [Architecture](#architecture)
+- [Demo](#demo)
 
-Database [![My Skills](https://skills.thijs.gg/icons?i=mongodb)](https://skills.thijs.gg)  [![My Skills](https://skills.thijs.gg/icons?i=redis)](https://skills.thijs.gg)
+## Description
 
+TicketSwap is the safest place to buy and sell tickets. A simple and fair-priced marketplace for fans to buy and sell tickets for events, concerts, ...
 
-Deployments [![My Skills](https://skills.thijs.gg/icons?i=docker)](https://skills.thijs.gg) [![My Skills](https://skills.thijs.gg/icons?i=kubernetes)](https://skills.thijs.gg)
+#### Technologies
 
+- Next.js, Bootstrap, Styled Components
+- Nodejs(express)
+- MongoDB, Redis
+- NATS STreaming
+- Docker, Github actions, Kubernetes
+- Digital Ocean
 
-Architecture
+## Feature
+
+Users who register for an account can buy or sell tickets on the website. They can view detailed ticket information, make payments for tickets, and display a list of purchased tickets
+
+## Services
+
+- Auth
+  - Service for authentication.
+  - Express, Node, Mongodb
+- Client
+  - Server side rendered client application
+  - Next, React
+- Tickets
+  - List, show, create, edit a ticket
+- Orders
+  - List, show, create, edit an Order
+- Payments
+  - Creates a payment for the order and changes order status. Payment with stripe included. Can be enhanced for more, i.e. paypal etc
+- Expiration Service
+
+## Architecture
 
 ![image](https://github.com/dinkloc/ticketing-microservices/assets/124766126/acedbf7f-9eef-41d8-958c-3d96b6a156da)
 
-
-List of microservices:
-
-  - client - Service responsible for the front-end.
-  - auth - Service responsible for authentication.
-  - tickets - Service responsible tickets.
-  - orders - Service responsible for orders.
-  - payments - Service managing payments.
-  - expiration - Service handling an order expiration time.
-  - nats streaming - Service events. Communicate between services
-
-Demo: http://www.ticketswap.one/
