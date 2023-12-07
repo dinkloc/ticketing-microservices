@@ -1,4 +1,4 @@
-# Ticket Swap
+
 
 ## Table of Contents
 
@@ -45,6 +45,3 @@ Users who register for an account can buy or sell tickets on the website. They c
 
 ![image](https://github.com/dinkloc/ticketing-microservices/assets/124766126/acedbf7f-9eef-41d8-958c-3d96b6a156da)
 
-## Demo
-
-> http://www.ticketswap.one/
