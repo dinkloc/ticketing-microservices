@@ -23,7 +23,7 @@ TicketSwap is the safest place to buy and sell tickets. A simple and fair-priced
 
 ## Feature
 
-Users who register for an account can buy or sell tickets on the website. They can view detailed ticket information, make payments for tickets, and display a list of purchased tickets
+Users who register for an account can buy or sell tickets on the website. They can view detailed ticket information, make payments for tickets, and display a list of purchased tickets.
 
 ## Services
 
