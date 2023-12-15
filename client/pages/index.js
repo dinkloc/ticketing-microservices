@@ -57,7 +57,7 @@ const LandingPage = ({ currentUser, tickets }) => {
               href="/tickets/[ticketId]"
               as={`/tickets/${ticket.id}`}
             >
-              <Button>View...</Button>
+              <Button>View</Button>
             </Link>
           </View>
         </div>
