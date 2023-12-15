@@ -70,7 +70,7 @@ const LandingPage = ({ currentUser, tickets }) => {
       {tickets.length > 0 ? (
         <div className="row">{ticketList}</div>
       ) : (
-        <H1>No Event Is Coming </H1>
+        <H1>No Event is Coming </H1>
       )}
     </div>
   );
