@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.css";
+import { SessionProvider } from "next-auth/react";
 import buildClient from "../api/build-client";
 import Header from "../components/header";
 import Head from "next/head";
