@@ -64,7 +64,7 @@ const LandingPage = ({ currentUser, tickets }) => {
       </Item>
     );
   });
-
+  console.log("Check");
   return (
     <div className="container">
       {tickets.length > 0 ? (
