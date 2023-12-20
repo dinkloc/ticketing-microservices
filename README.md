@@ -28,32 +28,6 @@ TicketSwap is the safest place to buy and sell tickets. A simple and fair-priced
 
 Users who register for an account can buy or sell tickets on the website. They can view detailed ticket information, make payments for tickets, and display a list of purchased tickets
 
-
-## Table of Contents
-
-- [Description](#description)
-- [Feature](#feature)
-- [Services](#Services)
-- [Architecture](#architecture)
-- [Demo](#demo)
-
-## Description
-
-TicketSwap is the safest place to buy and sell tickets. A simple and fair-priced marketplace for fans to buy and sell tickets for events, concerts, ...
-
-#### Technologies
-
-- Next.js, Bootstrap, Styled Components
-- Nodejs(express)
-- MongoDB, Redis
-- NATS STreaming
-- Docker, Github actions, Kubernetes
-- Digital Ocean
-
-## Feature
-
-Users who register for an account can buy or sell tickets on the website. They can view detailed ticket information, make payments for tickets, and display a list of purchased tickets.
-
 ## Services
 
 - Auth
